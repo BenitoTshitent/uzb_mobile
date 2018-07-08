@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the TacceuilPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//pages
+import {AcceuilPage} from "../acceuil/acceuil";
+import {CommandesPage} from "../commandes/commandes";
+import {PiecesPage} from "../pieces/pieces";
+import {ProduitsPage} from "../produits/produits";
 
 @IonicPage()
 @Component({
@@ -15,11 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TacceuilPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tab1Root: any="AcceuilPage";
+  tab2Root: any="ProduitsPage";
+  tab3Root: any="CommandesPage";
+  tab4Root: any="PiecesPage";
+  myIndex: number;
+
+  constructor(  public navParams: NavParams) {
+    // Set the active tab based on the passed index from menu.ts
+    this.myIndex = navParams.data.tabIndex || 0;
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TacceuilPage');
-  }
 
 }
